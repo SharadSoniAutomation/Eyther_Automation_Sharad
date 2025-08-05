@@ -1,0 +1,68 @@
+{
+  "positive_credentials": {
+    "email": "SS_Hos@gmail.com",
+    "password": "+N^lVcprI^*Z"
+  },
+  "negative_test_cases": [
+    {
+      "name": "invalid_email_format",
+      "email": "invalid-email",
+      "password": "validPassword123",
+      "expected_error": "Invalid email format"
+    },
+    {
+      "name": "empty_email",
+      "email": "",
+      "password": "validPassword123",
+      "expected_error": "Email is required"
+    },
+    {
+      "name": "empty_password",
+      "email": "test@example.com",
+      "password": "",
+      "expected_error": "Password is required"
+    },
+    {
+      "name": "both_fields_empty",
+      "email": "",
+      "password": "",
+      "expected_error": "Email and password are required"
+    },
+    {
+      "name": "wrong_email",
+      "email": "wrong@example.com",
+      "password": "+N^lVcprI^*Z",
+      "expected_error": "Invalid credentials"
+    },
+    {
+      "name": "wrong_password",
+      "email": "SS_Hos@gmail.com",
+      "password": "wrongPassword",
+      "expected_error": "Invalid credentials"
+    },
+    {
+      "name": "sql_injection_email",
+      "email": "'; DROP TABLE users; --",
+      "password": "password123",
+      "expected_error": "Invalid email format"
+    },
+    {
+      "name": "xss_email",
+      "email": "<script>alert('xss')</script>",
+      "password": "password123",
+      "expected_error": "Invalid email format"
+    },
+    {
+      "name": "very_long_email",
+      "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com",
+      "password": "password123",
+      "expected_error": "Email too long"
+    },
+    {
+      "name": "very_long_password",
+      "email": "test@example.com",
+      "password": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_error": "Password too long"
+    }
+  ]
+}
