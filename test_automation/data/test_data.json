@@ -64,5 +64,32 @@
       "password": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "expected_error": "Password too long"
     }
-  ]
+  ],
+  "dashboard_data": {
+    "expected_title": "Hospital Owner Dashboard",
+    "welcome_message": "Welcome, SS_Hospital",
+    "user_email": "SS_Hos@gmail.com",
+    "navigation_items": ["Dashboard", "Claim Management"],
+    "base_url": "https://qa.eyther.ai"
+  },
+  "claim_management_data": {
+    "page_title": "New Claim Submission",
+    "payers": ["MAA", "RGHS"],
+    "stages": ["Pre Auth", "Discharge"],
+    "sample_claims": {
+      "claim_id": "913",
+      "patient_name": "Sharad_SoniAutomation",
+      "payer": "MAA",
+      "stage": "Pre-Auth",
+      "status": "Pending"
+    },
+    "test_data": {
+      "valid_tid": "AUTO_TEST_001",
+      "search_terms": ["913", "Sharad", "MAA"],
+      "file_formats": ["PDF", "JPG", "PNG"],
+      "file_size_limit": "10MB"
+    }
+  }
+
+  
 }
